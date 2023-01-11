@@ -1,0 +1,28 @@
+---
+import BaseHead, { Props as HeadProps } from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Body from "../components/Body.astro";
+
+interface Props extends HeadProps {
+	class?: string;
+}
+
+const { class: mainClass, ...props } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead {...props} />
+	</head>
+	<Body>
+		<Header />
+
+		<main class:list={["flex-1", mainClass]}>
+			<slot />
+		</main>
+
+		<Footer />
+	</Body>
+</html>

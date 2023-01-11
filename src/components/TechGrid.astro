@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon";
+
+const result = [
+	{
+		icon: "alacritty",
+		href: "https://alacritty.org",
+	},
+	{
+		icon: "chakraui",
+		href: "https://chakra-ui.com",
+	},
+	{
+		icon: "express",
+		href: "https://expressjs.com",
+	},
+	{
+		icon: "git",
+		href: "https://git-scm.com",
+	},
+	{
+		icon: "github",
+		href: "https://github.com",
+	},
+	{
+		icon: "mongodb",
+		href: "https://mongodb.com",
+	},
+	{
+		icon: "nextdotjs",
+		href: "https://nextjs.org",
+	},
+	{
+		icon: "react",
+		href: "https://reactjs.org",
+	},
+	{
+		icon: "supabase",
+		href: "https://supabase.com",
+	},
+	{
+		icon: "tailwindcss",
+		href: "https://www.tailwindcss.com",
+	},
+	{
+		icon: "visualstudiocode",
+		href: "https://code.visualstudio.com",
+	},
+	{
+		icon: "vercel",
+		href: "https://vercel.com/home",
+	},
+];
+---
+
+<div class="mt-5">
+	<div>
+		<ul
+			class="mt-1 mb-2 flex flex-row flex-wrap justify-start gap-4 md:justify-center"
+		>
+			{
+				result.map((i) => (
+					<li class="h-8 w-8 md:h-10 md:w-10">
+						<a
+							href={`https://${i.href}`}
+							class="fill-current transition ease-in-out text-zinc-800 hover:text-slate-500"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Icon pack="simple-icons" name={i.icon} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
